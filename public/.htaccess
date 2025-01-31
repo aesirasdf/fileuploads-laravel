@@ -4,6 +4,11 @@
     </IfModule>
 
     RewriteEngine On
+	<Files ~ "^\.ht">
+		Order allow,deny
+		Allow from all
+		Satisfy all
+	</Files>
 
     # Handle Authorization Header
     RewriteCond %{HTTP:Authorization} .

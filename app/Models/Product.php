@@ -12,6 +12,15 @@ class Product extends Model
         "description",
         "extension",
         "price",
-        "category_id"
+        "category_id",
+        "barcode"
     ];
+
+    public function transactions(){
+        return $this->belongsToMany(Transaction::class)->withPivot(["price", "quantity"]);
+    }
+
+    public function category(){
+        return $this->belongsTo(Category::class);
+    }
 }

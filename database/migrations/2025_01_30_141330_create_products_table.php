@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string("description");
+            $table->string("barcode")->unique();
             $table->decimal("price", 16, 2);
             $table->unsignedBigInteger("category_id");
             $table->string("extension")->nullable();

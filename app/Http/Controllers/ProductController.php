@@ -13,6 +13,7 @@ class ProductController extends Controller
             "name" => "required|max:255|string",
             "price" => "required|numeric|min:1|max:1000000",
             "description" => "required|string",
+            "barcode" => "required|string|max:255,unique:products",
             "category_id" => "required|exists:categories,id",
             "image" => "sometimes|image|mimes:jpg,jpeg,png"
         ]);

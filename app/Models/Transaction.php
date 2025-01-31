@@ -4,13 +4,10 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Category extends Model
+class Transaction extends Model
 {
     //
-    protected $fillable = ["name"];
-
-
     public function products(){
-        return $this->hasMany(Product::class);
+        return $this->belongsToMany(Product::class)->withPivot(["price", "quantity"]);
     }
 }
